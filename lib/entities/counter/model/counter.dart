@@ -8,7 +8,6 @@ abstract class Counter with _$Counter {
   const factory Counter({
     @Default(0) int value,
     @Default('') String lastAction,
-    @JsonKey(name: 'updated_at')
     DateTime? lastUpdated,
   }) = _Counter;
 

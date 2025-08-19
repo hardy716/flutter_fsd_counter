@@ -12,7 +12,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const HomePage(),
       ),
       GoRoute(
-        path: '/counter',
+        path: '/display',
         builder: (context, state) => const CounterPage(),
       ),
     ],

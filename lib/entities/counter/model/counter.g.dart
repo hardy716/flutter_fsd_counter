@@ -9,13 +9,13 @@ part of 'counter.dart';
 _Counter _$CounterFromJson(Map<String, dynamic> json) => _Counter(
   value: (json['value'] as num?)?.toInt() ?? 0,
   lastAction: json['lastAction'] as String? ?? '',
-  lastUpdated: json['updated_at'] == null
+  lastUpdated: json['lastUpdated'] == null
       ? null
-      : DateTime.parse(json['updated_at'] as String),
+      : DateTime.parse(json['lastUpdated'] as String),
 );
 
 Map<String, dynamic> _$CounterToJson(_Counter instance) => <String, dynamic>{
   'value': instance.value,
   'lastAction': instance.lastAction,
-  'updated_at': instance.lastUpdated?.toIso8601String(),
+  'lastUpdated': instance.lastUpdated?.toIso8601String(),
 };

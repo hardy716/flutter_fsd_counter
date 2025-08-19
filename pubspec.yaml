@@ -1,5 +1,5 @@
 name: flutter_fsd_counter
-description: "flutter counter application with FSD(Feature-Sliced Design)"
+description: "flutter display application with FSD(Feature-Sliced Design)"
 publish_to: 'none'
 
 version: 1.0.0+1

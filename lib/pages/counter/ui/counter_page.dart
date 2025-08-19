@@ -1,67 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../features/counter/ui/counter_display.dart';
-import '../../../features/counter/ui/counter_controls.dart';
+import '../../../features/display/ui/counter_display.dart';
+import '../../../widgets/app_bars/model/app_bar_action.dart';
+import '../../../widgets/app_bars/model/app_bar_config.dart';
+import '../../../widgets/app_bars/ui/configurable_app_bar.dart';
+import '../../../widgets/controller/ui/counter_controller.dart';
+import '../model/counter_page_config.dart';
+import '../lib/counter_page_helpers.dart';
 
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
 
+  static const _config = CounterPageConfig();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Counter'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.go('/'),
+      appBar: ConfigurableAppBar(
+        config: AppBarConfig(
+          title: _config.title,
+          actions: [
+            AppBarAction(
+              icon: Icons.info_outline,
+              onPressed: () => CounterPageHelpers.showInfoDialog(context),
+              tooltip: 'Information',
+            ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () => _showInfo(context),
-          ),
-        ],
+        onLeadingPressed: () => CounterPageHelpers.navigateBack(context),
       ),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              flex: 2,
-              child: CounterDisplay(),
-            ),
-
-            Expanded(
-              flex: 1,
-              child: CounterControls(),
-            ),
+            Expanded(flex: 2, child: CounterDisplay()),
+            Expanded(flex: 1, child: CounterController()),
           ],
         ),
-      ),
-    );
-  }
-
-  void _showInfo(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Information'),
-        content: const Text(
-            'This counter uses the following packages:\n\n'
-                '• RiverPod: Health Management\n'
-                '• Go Router: Routing\n'
-                '• Freezed: Immutable Object\n'
-                '• Dio: HTTP Client'
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
-          ),
-        ],
       ),
     );
   }

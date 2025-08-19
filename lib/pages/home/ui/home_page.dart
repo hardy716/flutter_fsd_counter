@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 32),
 
               Text(
-                'Welcome to the counter app with FSD architecture!',
+                'Welcome to the display app with FSD architecture!',
                 style: theme.textTheme.headlineSmall,
                 textAlign: TextAlign.center,
               ),
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 48),
 
               AppButton.icon(
-                onPressed: () => context.go('/counter'),
+                onPressed: () => context.go('/display'),
                 icon: Icons.play_arrow,
                 label: 'Start Counter',
               ),

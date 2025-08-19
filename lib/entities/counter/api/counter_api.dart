@@ -24,7 +24,7 @@ class CounterApi {
         lastUpdated: DateTime.now(),
       );
     } catch (e) {
-      throw Exception('Could not get counter data: $e');
+      throw Exception('Could not get display data: $e');
     }
   }
 
@@ -33,7 +33,7 @@ class CounterApi {
 
     try {
       // In practice, API calls:
-      // final response = await _dio.post('/counter', data: {'action': action});
+      // final response = await _dio.post('/display', data: {'action': action});
 
       // simulation logic
       final currentTime = DateTime.now();

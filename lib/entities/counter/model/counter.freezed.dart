@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Counter {
 
- int get value; String get lastAction;@JsonKey(name: 'updated_at') DateTime? get lastUpdated;
+ int get value; String get lastAction; DateTime? get lastUpdated;
 /// Create a copy of Counter
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CounterCopyWith<$Res>  {
   factory $CounterCopyWith(Counter value, $Res Function(Counter) _then) = _$CounterCopyWithImpl;
 @useResult
 $Res call({
- int value, String lastAction,@JsonKey(name: 'updated_at') DateTime? lastUpdated
+ int value, String lastAction, DateTime? lastUpdated
 });
 
 
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int value,  String lastAction, @JsonKey(name: 'updated_at')  DateTime? lastUpdated)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int value,  String lastAction,  DateTime? lastUpdated)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Counter() when $default != null:
 return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
@@ -176,7 +176,7 @@ return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int value,  String lastAction, @JsonKey(name: 'updated_at')  DateTime? lastUpdated)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int value,  String lastAction,  DateTime? lastUpdated)  $default,) {final _that = this;
 switch (_that) {
 case _Counter():
 return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
@@ -196,7 +196,7 @@ return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int value,  String lastAction, @JsonKey(name: 'updated_at')  DateTime? lastUpdated)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int value,  String lastAction,  DateTime? lastUpdated)?  $default,) {final _that = this;
 switch (_that) {
 case _Counter() when $default != null:
 return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
@@ -211,12 +211,12 @@ return $default(_that.value,_that.lastAction,_that.lastUpdated);case _:
 @JsonSerializable()
 
 class _Counter implements Counter {
-  const _Counter({this.value = 0, this.lastAction = '', @JsonKey(name: 'updated_at') this.lastUpdated});
+  const _Counter({this.value = 0, this.lastAction = '', this.lastUpdated});
   factory _Counter.fromJson(Map<String, dynamic> json) => _$CounterFromJson(json);
 
 @override@JsonKey() final  int value;
 @override@JsonKey() final  String lastAction;
-@override@JsonKey(name: 'updated_at') final  DateTime? lastUpdated;
+@override final  DateTime? lastUpdated;
 
 /// Create a copy of Counter
 /// with the given fields replaced by the non-null parameter values.
@@ -251,7 +251,7 @@ abstract mixin class _$CounterCopyWith<$Res> implements $CounterCopyWith<$Res> {
   factory _$CounterCopyWith(_Counter value, $Res Function(_Counter) _then) = __$CounterCopyWithImpl;
 @override @useResult
 $Res call({
- int value, String lastAction,@JsonKey(name: 'updated_at') DateTime? lastUpdated
+ int value, String lastAction, DateTime? lastUpdated
 });
 
 
