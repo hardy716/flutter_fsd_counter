@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../entities/counter/model/counter_state.dart';
-import '../../../shared/ui/components/app_button.dart';
+import '../../../entities/counter/index.dart';
+import '../../../shared/index.dart';
 import '../model/decrement_notifier.dart';
 
 class DecrementButton extends ConsumerWidget {

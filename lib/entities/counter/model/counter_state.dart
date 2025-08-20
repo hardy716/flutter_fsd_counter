@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../entities/counter/model/counter.dart';
+import '../../../entities/counter/index.dart';
 
 part 'counter_state.freezed.dart';
 

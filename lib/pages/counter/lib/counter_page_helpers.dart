@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../features/stop/index.dart';
 
 class CounterPageHelpers {
   static void showInfoDialog(BuildContext context) {
@@ -24,7 +26,8 @@ class CounterPageHelpers {
     );
   }
 
-  static void navigateBack(BuildContext context) {
-    context.go('/');
+  static void stopCounter(WidgetRef ref) {
+    final stopNotifier = ref.read(stopNotifierProvider);
+    stopNotifier.stop(ref);
   }
 }

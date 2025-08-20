@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../features/display/ui/counter_display.dart';
-import '../../../widgets/app_bars/model/app_bar_action.dart';
-import '../../../widgets/app_bars/model/app_bar_config.dart';
-import '../../../widgets/app_bars/ui/configurable_app_bar.dart';
-import '../../../widgets/controller/ui/counter_controller.dart';
-import '../model/counter_page_config.dart';
+import '../../../features/display/index.dart';
+import '../../../widgets/app_bars/index.dart';
+import '../../../widgets/controller/index.dart';
+
 import '../lib/counter_page_helpers.dart';
 
-class CounterPage extends StatelessWidget {
+class CounterPage extends ConsumerWidget {
   const CounterPage({super.key});
 
-  static const _config = CounterPageConfig();
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: ConfigurableAppBar(
         config: AppBarConfig(
-          title: _config.title,
+          title: 'Counter',
           actions: [
             AppBarAction(
               icon: Icons.info_outline,
@@ -27,7 +24,7 @@ class CounterPage extends StatelessWidget {
             ),
           ],
         ),
-        onLeadingPressed: () => CounterPageHelpers.navigateBack(context),
+        onLeadingPressed: () => CounterPageHelpers.stopCounter(ref),
       ),
       body: Padding(
         padding: EdgeInsets.all(24.0),

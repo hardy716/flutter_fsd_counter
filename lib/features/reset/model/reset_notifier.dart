@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../entities/counter/api/counter_api.dart';
-import '../../../entities/counter/model/counter_state.dart';
+import '../../../entities/counter/index.dart';
 
 final resetNotifierProvider = Provider<ResetNotifier>((ref) {
   final counterApi = ref.watch(counterApiProvider);

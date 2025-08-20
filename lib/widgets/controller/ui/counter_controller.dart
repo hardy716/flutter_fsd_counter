@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../features/decrement/ui/decrement_button.dart';
-import '../../../features/increment/ui/increment_button.dart';
-import '../../../features/reset/ui/reset_button.dart';
+import '../../../features/increment/index.dart';
+import '../../../features/decrement/index.dart';
+import '../../../features/reset/index.dart';
 
 class CounterController extends StatelessWidget {
   const CounterController({super.key});

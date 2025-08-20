@@ -21,7 +21,7 @@ class ConfigurableAppBar extends StatelessWidget implements PreferredSizeWidget 
       backgroundColor: config.backgroundColor ??
           Theme.of(context).colorScheme.inversePrimary,
       leading: AppBarHelpers.buildLeading(
-        showBackButton: config.showBackButton,
+        showLeading: config.showLeading,
         onLeadingPressed: onLeadingPressed,
         backRoute: backRoute,
       ),

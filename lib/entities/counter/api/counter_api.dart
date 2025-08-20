@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../shared/providers/dio_provider.dart';
+import '../../../shared/index.dart';
 import '../model/counter.dart';
 
 final counterApiProvider = Provider<CounterApi>((ref) {

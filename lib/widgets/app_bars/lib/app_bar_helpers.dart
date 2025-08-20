@@ -12,11 +12,11 @@ class AppBarHelpers {
   }
 
   static Widget? buildLeading({
-    required bool showBackButton,
+    required bool showLeading,
     VoidCallback? onLeadingPressed,
     String? backRoute,
   }) {
-    if (!showBackButton) return null;
+    if (!showLeading) return null;
 
     return Builder(
       builder: (context) => IconButton(

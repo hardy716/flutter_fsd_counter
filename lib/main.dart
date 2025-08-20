@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/router/app_router.dart';
+import 'app/theme/app_theme.dart';
 
 void main() {
   runApp(
@@ -18,10 +19,12 @@ class CounterApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
 
+    ref.watch(routerControllerProvider);
+
     return MaterialApp.router(
       title: 'FSD Counter App',
-      // theme: AppTheme.light,
-      // darkTheme: AppTheme.dark,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       routerConfig: router,
     );
   }

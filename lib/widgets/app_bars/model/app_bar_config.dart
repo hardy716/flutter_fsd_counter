@@ -5,13 +5,13 @@ import 'app_bar_action.dart';
 class AppBarConfig {
   final String title;
   final Color? backgroundColor;
-  final bool showBackButton;
+  final bool showLeading;
   final List<AppBarAction> actions;
 
   const AppBarConfig({
     required this.title,
     this.backgroundColor,
-    this.showBackButton = true,
+    this.showLeading = true,
     this.actions = const [],
   });
 }
